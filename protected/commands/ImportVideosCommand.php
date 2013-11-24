@@ -18,7 +18,7 @@ class ImportVideosCommand extends CConsoleCommand
             Yii::app()->db->createCommand()->truncateTable($table);
         }
         
-        $mysql = mysql_connect('127.0.0.1', 'local', 'locallocal');
+        $mysql = mysql_connect('127.0.0.1', Yii::app()->db->username, Yii::app()->db->password);
         mysql_select_db('saolei');
         
         $user_alias = array(
