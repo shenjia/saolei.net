@@ -2,7 +2,7 @@
 return array(
 
 	// Hints
-	'username_hint' => '请输入常用邮箱作为您的登录名<em>(升级后不可更改)</em>',
+	'username_hint' => '请输入常用邮箱作为您的用户名<em>(升级后不可更改)</em>',
 	'password_hint' => '请输入6~20位密码',
 
 	// Errors

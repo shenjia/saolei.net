@@ -5,7 +5,7 @@
     		<em><?= Format::score_3bvs($score) ?></em>
     	<?php if ($id):?></a><?php endif;?>
     <?php elseif ($score < 0):?>
-    	<del title="<?= Yii::t('video', 'why_uncount_3bvs')?>"><?= str_replace('-', '', $score) ?></del>
+    	<del title="<?= Yii::t('video', 'why_uncount_3bvs')?>"><?= str_replace('-', '', Format::score_3bvs($score)) ?></del>
     <?php else:?>
     	<ins class="null" title="<?= Yii::t('video', 'why_null_record')?>">?</ins>
     <?php endif;?>

@@ -3,7 +3,7 @@ return array(
 
 	'user' => '用户',
 
-		'username' => '邮箱',
+		'username' => '用户',
 		'password' => '密码',
 		'chinese_name' => '真实姓名',
 		'english_name' => '姓名拼音',
