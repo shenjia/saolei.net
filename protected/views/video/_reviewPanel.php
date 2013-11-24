@@ -3,7 +3,7 @@ $role = UserAuth::getRole();
 $auth_checked = (UserAuth::isManager($role) && $video->status == VideoConfig::STATUS_NORMAL) || UserAuth::isAdministrator($role); 
 $this->widget('Buttons', array( 
     'options' => array(
-    	'class' => 'left',
+    	'class' => 'left', 'size' => 'small'
     ),
     'buttons' => array(
         array(

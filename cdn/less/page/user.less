@@ -3,9 +3,9 @@
 
 #user_list {
     min-width: 500px;
-    .user { min-width: 115px }
-    .title { width: 90px;
-    }
+    .user { min-width: 115px; }
+    .avatar_link { font-size: @subtitleSize }
+    .title { width: 90px }
     .level { 
         margin-right: 5px;
     }
@@ -147,6 +147,12 @@
     &.big { 
         .size(20px, 20px);
         .background('common/gender20x20.png');
+        &.male { .background-pos(top) }
+        &.female { .background-pos(bottom) }
+    }
+    &.small { 
+        .size(8px, 8px);
+        .background('common/gender8x8.png');
         &.male { .background-pos(top) }
         &.female { .background-pos(bottom) }
     }

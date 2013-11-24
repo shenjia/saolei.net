@@ -56,7 +56,6 @@
         <?php if (!empty($news)):?>
         <div id="news" class="box">
         	<h2>最新动态</h2>
-        	<hr class="down"/>
         	<table cellpadding="0" cellspacing="0" class="table">
         	<?php 
         	foreach ($news as $item) {

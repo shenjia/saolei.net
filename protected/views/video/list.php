@@ -46,6 +46,6 @@ if ( !empty($videos) ) {
 		echo CHtml::closeTag('a');
 	}
 }
-$this->widget('Pager', array('pages' => $pages));
 ?>
 </div>
+<?php $this->widget('Pager', array('pages' => $pages));?>

@@ -39,11 +39,11 @@
                 </p>
             	<hr>
             	<?php $this->widget( 'Button', array( 
-            		'name' => 'open', 'size' => 'big', 'class' => 'active',
+            		'name' => 'open', 'class' => 'active',
             		'url' => VIDEO_PATH . $video->info->filepath, 'blank' => false
             	) ); ?>
             	<?php $this->widget( 'Button', array( 
-            		'name' => 'download', 'size' => 'big', 
+            		'name' => 'download', 
             		'url' => '/video/download/' . $video->id, 'blank' => false
             	) ); ?>
                 <p class="counters">

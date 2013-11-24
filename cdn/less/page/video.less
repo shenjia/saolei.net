@@ -62,6 +62,9 @@
             margin-top: 0;
             line-height: @titleHeight;
         }
+        .author {
+            font-size: @subtitleSize;
+        }
         .counters { .right; 
             margin-top: 15px;
             line-height: @titleHeight;
@@ -96,7 +99,10 @@
         em { .text(@light, @baseSize) } 
     }
     .level { margin-right: 0 }
-    .author { margin-right: 5px }
+    .author { 
+        margin-right: 5px;
+        font-size: @subtitleSize;
+    }
     .reviewer {
         .inline;
         margin-right: 5px;

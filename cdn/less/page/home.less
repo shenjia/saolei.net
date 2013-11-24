@@ -5,16 +5,20 @@
     .table {
         td { padding: 3px }
     }
+    .avatar_link { font-size: @textSize; }
+    .title {
+        em { font-size: @baseSize; }
+    }
 }
 
 #newbie {
-
+    .time { font-size: @baseSize }
 }
 
-#top10 {
+#top {
     .table {
-        .rank { padding: 0 }
-        .user { padding-left: 0 }
+        .rank { padding: 0; width: 20px; .ta(right) }
+        .user { padding-left: 5px }
     }
 }
 
@@ -22,28 +26,29 @@
     .table {
         width: 100%;
         td {
-            padding: 3px 8px 3px 0;
+            padding: 0 8px 0 0;
             .text(@baseColor, @baseSize, @subtitleHeight);
         }
     }
     .title {
         margin: 0 5px;
+        em { font-size: @baseSize; }
     }
     .record {
         margin: 0 5px;
-        .text(@textColor, @textSize);
+        .text(@textColor, @baseSize);
     }
     .increase {
         .inline; .size(16px, 16px);
         margin-right: 5px;
         .background('common/increase.png');
-        vertical-align: baseline;
+        vertical-align: middle;
     }
     .original {
-        .text(@subtitleColor, @subtitleSize);
+        .text(@subtitleColor, @textSize);
     }
     .score {
-        .text(@noticeColor, @subtitleSize); .text-over(@hoverColor);
+        .text(@noticeColor, @textSize); .text-over(@hoverColor);
         font-weight: bold;
     }
     #news_loader { margin-top: 15px }

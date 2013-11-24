@@ -3,4 +3,4 @@
 <?php else:?>
 <span class="avatar_link <?= $class ?>"><?= $user->chinese_name ?></span>
 <?php endif;?>
-<span class="gender <?= $user->sex ? 'male' : 'female'?>"></span>
+<span class="gender <?= $user->sex ? 'male' : 'female'?> <?= $gender ?>"></span>
