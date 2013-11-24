@@ -5,7 +5,7 @@ class HomeConfig
     const NEWBIE_NUMBER = 5;
     const NEW_VIDEO_NUMBER = 5;
     
-    const NEWS_NUMBER = 15;
+    const NEWS_NUMBER = 30;
     const NEWS_PAGECOUNT = 30;
     
 }
