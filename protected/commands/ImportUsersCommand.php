@@ -46,6 +46,7 @@ class ImportUsersCommand extends CConsoleCommand
             unset($line);
             fclose($fileh);
         }
+        echo 'done' . PHP_EOL;
     }
 
     function parse(&$line, &$fields) 
