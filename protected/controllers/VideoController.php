@@ -84,7 +84,7 @@ class VideoController extends Controller
 	{
 	    $video = Video::getFullInfo($id);
 	    $video->stat->uniqueAction('download');
-        header("Content-Disposition: attachment; filename= '" . $video->filename . "'");
+	    header("Content-Disposition: attachment; filename= \"" . $video->filename . "\"");
         header("Content-Type: application/octet-stream");
         header('X-Accel-Redirect: ' . VIDEO_PATH . $video->info->filepath); 
         header("X-Accel-Buffering: yes");
