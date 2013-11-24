@@ -21,7 +21,7 @@ class VideoModel extends BaseModel
     {
         return array(
             'time' => $this->info->real_time,
-            '3bvs' => ($this->info->board_3bv > VideoConfig::MIN_3BV_FOR_3BVS ? '' : '-')
+            '3bvs' => ($this->info->board_3bv >= VideoConfig::MIN_3BV_FOR_3BVS ? '' : '-')
                     . intval($this->info->board_3bv * 1000000 / $this->info->real_time) 
         );
     }
