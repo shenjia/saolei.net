@@ -1,7 +1,7 @@
 <ul id="home">
 	<li class="main">
         <div id="news" class="box">
-        	<h1>雷界动态1</h1>
+        	<h1>雷界动态</h1>
         	<table cellpadding="0" cellspacing="0" class="table">
         	<?php foreach ($news as $item) {
         	    $this->renderPartial('/news/_cell', array('news' => $item));
