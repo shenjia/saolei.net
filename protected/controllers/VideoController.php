@@ -86,7 +86,7 @@ class VideoController extends Controller
 	    $video->stat->uniqueAction('download');
         header("Content-Disposition: attachment; filename= '" . $video->filename . "'");
         header("Content-Type: application/octet-stream");
-        header('X-Accel-Redirect: ' . VIDEO_ROOT . $video->info->filepath); 
+        header('X-Accel-Redirect: ' . VIDEO_PATH . $video->info->filepath); 
         header("X-Accel-Buffering: yes");
         header("X-Accel-Limit-Rate :" . DOWNLOAD_LIMIT_RATE);
         //header("Accept-Ranges: none");//单线程 限制多线程

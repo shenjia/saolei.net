@@ -108,12 +108,12 @@ class Video
     
     public static function saveFile(&$data) 
     {
-        $targetDir = VIDEO_PATH . '/' . date('Y/m/d');
+        $targetDir = DOC_ROOT . VIDEO_PATH . '/' . date('Y/m/d');
         if (!file_exists($targetDir)) {
             @mkdir($targetDir, 0755, true);
         } 
         $filePath = '/' . date('Y/m/d') . '/' . $data['hash'] . '.avf';
-        $copyed = @copy($data['filepath'], VIDEO_PATH . $filePath);
+        $copyed = @copy($data['filepath'], DOC_ROOT . VIDEO_PATH . $filePath);
         $data['filepath'] = $filePath;
         if (!$copyed){
             Logger::warning('save video failed', 100, array('from' => $data['filepath'], 'to' => UPLOAD_PATH . $filePath));

@@ -1,4 +1,5 @@
 assets/
 protected/runtime/
 themes/classic/views/
+videos/
 .DS_Store

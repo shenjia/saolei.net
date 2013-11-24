@@ -14,8 +14,7 @@ define('UPLOAD_PATH', DOC_ROOT . '/upload');
 /**
  * 视频配置
  */
-define('VIDEO_ROOT', '/videos');
-define('VIDEO_PATH', DOC_ROOT . '/videos');
+define('VIDEO_PATH', '/videos');
 define('DOWNLOAD_LIMIT_RATE', 102400);
 
 /**
