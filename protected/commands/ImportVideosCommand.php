@@ -193,7 +193,7 @@ class ImportVideosCommand extends CConsoleCommand
             $id = (int) $video['Video_Id'],
             $user = (int) $video['Video_Player'],
             $score_time = intval($info['time'] * 1000),
-            $score_3bvs = ((int)$info['3bv'] > VideoConfig::MIN_3BV_FOR_3BVS) ? intval(($info['3bv'] / $score_time) * 1000000) : 0,
+            $score_3bvs = ((int)$info['3bv'] >= VideoConfig::MIN_3BV_FOR_3BVS) ? intval(($info['3bv'] / $score_time) * 1000000) : 0,
             $create_time = $this->timestamp($video['Video_Time']) 
         );
         $ret = mysql_query($sql);
