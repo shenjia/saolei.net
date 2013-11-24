@@ -1,6 +1,6 @@
 <?php
 define('FROM_PATH', __DIR__.'/../../../history');
-define('TO_PATH', __DIR__.'/../../../videos');
+define('TO_PATH', __DIR__.'/../../videos');
 
 class ImportVideosCommand extends CConsoleCommand
 {
