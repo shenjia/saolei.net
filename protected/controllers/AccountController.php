@@ -183,7 +183,7 @@ class AccountController extends Controller
 	{
 	    $user = User::getCurrentUser();
 		foreach ($model->attributeNames() as $attribute) {
-			if (isset($info[$attribute])) $model[$attribute] = $user->info[$attribute];
+			if (isset($user->info[$attribute])) $model[$attribute] = $user->info[$attribute];
 		}
 		if ($info->birthday) {
 		    $model->birth_day   = date('j', $user->info->birthday);

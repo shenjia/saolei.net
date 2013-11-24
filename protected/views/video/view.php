@@ -39,15 +39,19 @@
                 </p>
             	<hr>
             	<?php $this->widget( 'Button', array( 
+            		'name' => 'open', 'size' => 'big', 'class' => 'active',
+            		'url' => VIDEO_PATH . $video->info->filepath, 'blank' => false
+            	) ); ?>
+            	<?php $this->widget( 'Button', array( 
             		'name' => 'download', 'size' => 'big', 
             		'url' => '/video/download/' . $video->id, 'blank' => false
             	) ); ?>
-            	<?php $this->renderPartial('/video/_reviewPanel', array('video' => $video))?>
                 <p class="counters">
                 	<span class="clicks">点击<em><?= $video->stat->clicks ?></em></span>
             		<span class="comments">评论<em><?= $video->stat->comments ?></em></span>
             		<span class="downloads">下载<em><?= $video->stat->downloads ?></em></span>
             	</p>
+            	<?php $this->renderPartial('/video/_reviewPanel', array('video' => $video))?>
         	</div>
         </div>
     </li>

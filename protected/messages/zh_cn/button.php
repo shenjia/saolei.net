@@ -24,6 +24,7 @@ return array(
 	// video
 	'upload' => '上传',
 	'uploadVideo' => '上传录像',
+    'open' => '打开',
     'download' => '下载',
     'downloadVideo' => '下载录像',
 	'startUpload' => '开始上传',
