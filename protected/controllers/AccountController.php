@@ -136,7 +136,7 @@ class AccountController extends Controller
 			$model->attributes=$_POST['ProfileForm'];
 			if($model->validate()) {
 				$model->saveToDb();
-				Flash::success('form/profile-form/success', 'app.refresh()');
+				Flash::success('form/profile-form/success');
 			}
 		}
 
@@ -164,7 +164,7 @@ class AccountController extends Controller
 			$model->attributes=$_POST['PasswordForm'];
 			if($model->validate()) {
 				$model->saveToDb();
-				Flash::success('form/password-form/success', 'app.refresh()');
+				Flash::success('form/password-form/success');
 			}
 		}
 
