@@ -41,7 +41,7 @@ $(function(){
 	uploader.bind('FilesAdded', function(up, files) {
 		for (var i in files) {
 			$('#filelist').append( '<div id="' + files[i].id + '" class="progressBar">'
-					+ '<div class="title"><span class="name"><em>' + files[i].name + '</em> (' 
+					+ '<div class="title"><span class="name">' + files[i].name + ' (' 
 					+ plupload.formatSize(files[i].size) + ')</span><span class="checkStatus"></span><span class="message"></span></div>'
 					+ '<span class="progress"></span><span class="status"></span><a href="javascript:$(\'#' + files[i].id + '\').fadeOut();void(0);" class="cancel"></a></div>' );
 		}

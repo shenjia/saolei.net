@@ -30,8 +30,8 @@ class VideoModel extends BaseModel
     {
         $pathinfo = pathinfo($this->info->filepath);
         return '' 
-            . '#' . $this->author->id
-            . ' ' . $this->author->english_name
+            . $this->author->english_name
+            . ' (ID.' . $this->author->id . ')'
             . ' - ' .ucfirst($this->level) 
             . ' ' . Format::score_time($this->scores['time']) . 's' . ($this->info->noflag ? ' NF' : '')
             . ' - 3BV ' . $this->info->board_3bv . ''

@@ -4,6 +4,7 @@ class TitleConfig
     const LEVEL = 'sum';
     const ORDER = 'time';
     
+    
     public static $titles = array(
         '大元帅', '元帅', '大将', '上将', '中将', '少将', '大校', '上校', '中校', '少校', '上尉', '中尉', '少尉', 
         '上士', '中士', '下士', '上等兵', '列兵'
