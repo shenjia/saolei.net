@@ -1,0 +1,59 @@
+// Progress.less
+// -------------------------------
+
+.progressBar {
+	.block;
+	#position.container;
+	.size( 100%, 36px );
+	.border;
+	.background( @backgroundColor );
+	margin-top: 15px;
+	.title {
+		.text( @light, 14px, 36px );
+		.size( 100%, 100% );
+		.block;
+		#position.lt( 0, 0 );
+		z-index: @zindexFixed;
+		span { .text( @lighter, 20px, 36px ) }
+		em { .text( @lighter, 20px, 36px ) }
+		.name {
+			.left;
+			padding-left: 15px;
+		}
+		.message, .checkStatus {
+			.right;
+			padding-right: 15px;
+		}
+	}
+	.progress {
+		.block;
+		.size( 0%, 100% );
+		#position.lt( 0, 0 );
+		.background( @gray );
+	}
+	.cancel {
+		.size( 32px, 32px );
+		#position.rt( -16px, -16px );
+		.background( 'common/close.png' );	
+		.background-over( bottom );
+		opacity: 0;
+		z-index: @zindexFixed;
+	}
+	&.error {
+		.progress { .hide }
+		.border( @errorColor );
+		span, em { color: @errorColor; }
+		.cancel { 
+			opacity: 1; .transition( opacity .2s .2s ); 
+			background-position: bottom;
+		}
+	}
+	&.success {
+		.progress { .hide }
+		.border( @activeColor );
+		span, em { color: @activeColor; }
+	}
+	&:hover {
+		.cancel { opacity: 1; .transition( opacity .2s .2s ); }
+	}
+}

@@ -1,0 +1,93 @@
+// Ranking.less
+// --------------
+
+.ranking_list {
+    .user_cell, .video_cell { 
+        span { .inline }
+        padding: 15px 30px;
+        a:hover { 
+            span, em { color: @hoverColor }
+        }
+    }
+    .rank { 
+        font-size: @subtitleSize; margin-right: 8px; min-width: 75px;
+        em { color: @golden; padding: 0 5px }
+    }
+}
+
+.title, .title:hover {
+    em { 
+        margin: 0; padding: 0;
+        font-size: @textSize;
+        &.grand    { color: @red }
+        &.marshal  { color: @yellow }
+        &.general  { color: #f79646 }
+        &.colonel  { color: #e26b0a }
+        &.captain  { color: #9bbb59 }
+        &.sergeant { color: @lighter }
+        &.private  { color: @light }
+    }
+}
+.grade, .grade:hover {
+    em {
+        margin: 0; padding: 0;
+        font-size: @subtitleSize;
+        &.S { color: #E6DB74 }
+        &.A { color: #ff0080 }
+        &.B { color: #df00a6 }
+        &.C { color: #bf00cc }
+        &.D { color: #a000e5 }
+        &.E { color: #8000ff }
+        &.F { color: #6600cc }
+    }
+}
+
+#page {
+    .level { 
+        .text(@light, @subtitleSize);
+        a:hover { 
+            span { color: @hoverColor }
+        }
+    }
+    .score_time {
+        .inline; margin-right: 8px;
+        .text(@gray, @baseSize);
+        em {
+            padding-right: 0; 
+            .text(@lighter, @subtitleSize);
+            font-weight: bold; 
+        }
+        ins {
+            cursor: help;
+            text-decoration: none;
+            color: @golden;
+            &.null { color: @gray }
+        }
+        a:hover { 
+            em { color: @hoverColor }
+        }
+    }   
+    .score_3bvs { 
+        .inline; margin-right: 8px;
+        .text(@gray, @baseSize);
+        em {
+            padding-right: 0; 
+            .text(@lighter, @subtitleSize);
+            font-weight: bold; 
+        }
+        ins {
+            cursor: help;
+            text-decoration: none;
+            color: @golden;
+            &.null { color: @gray }
+        }
+        del {
+            cursor: help;
+            padding: 0 5px;
+            .text(@gray, @subtitleSize);
+        }
+        a:hover { 
+            em { color: @hoverColor }
+        }
+    }
+}

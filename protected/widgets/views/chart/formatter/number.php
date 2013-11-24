@@ -1,0 +1,1 @@
+return this.value > 100 ? this.value / 1000 +'k' : this.value;

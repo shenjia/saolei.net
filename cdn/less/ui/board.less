@@ -1,0 +1,109 @@
+// Board.less
+// -----------------------
+
+@begX : 8;
+@begY : 8;
+@intX : 16;
+@intY : 16;
+@expX : 30;
+@expY : 16;
+
+.board {
+    .block;
+    .border();
+    border-top-color: #7f7f7f;
+    border-left-color: #7f7f7f;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    &.size4 { 
+        border-width: 2px;
+        .background('common/board4x4.gif', repeat);
+        td { 
+            .size(4px, 4px); 
+            .background('common/block4x4.png'); 
+            &.b0 { background-position: 0px 0px; }
+            &.b1 { background-position: 0px -4px; }
+            &.b2 { background-position: 0px -8px; }
+            &.b3 { background-position: 0px -12px; }
+            &.b4 { background-position: 0px -16px; }
+            &.b5 { background-position: 0px -20px; }
+            &.b6 { background-position: 0px -24px; }
+            &.b7 { background-position: 0px -28px; }
+            &.b8 { background-position: 0px -32px; }
+            &.bb { background-position: 0px -36px; }
+            &.bf { background-position: 0px -40px; }
+            &.bc { background-position: 0px -44px; }
+            &.bq { background-position: 0px -48px; }
+            &.bm { background-position: 0px -52px; }
+            &.bn { background-position: 0px -56px; }
+
+        } 
+        &.lv10 { .size(8 * 4px, 8 * 4px); }
+        &.lv40 { .size(16 * 4px, 16 * 4px); }
+        &.lv99 { .size(30 * 4px, 16 * 4px); }
+    }
+    &.size8 {
+        border-width: 2px;
+        .background('common/board8x8.gif', repeat);
+        td { 
+            .size(8px, 8px); 
+            .background('common/block8x8.png'); 
+            &.b0 { background-position: 0px 0px; }
+            &.b1 { background-position: 0px -8px; }
+            &.b2 { background-position: 0px -16px; }
+            &.b3 { background-position: 0px -24px; }
+            &.b4 { background-position: 0px -32px; }
+            &.b5 { background-position: 0px -40px; }
+            &.b6 { background-position: 0px -48px; }
+            &.b7 { background-position: 0px -56px; }
+            &.b8 { background-position: 0px -64px; }
+            &.bb { background-position: 0px -72px; }
+            &.bf { background-position: 0px -80px; }
+            &.bc { background-position: 0px -88px; }
+            &.bq { background-position: 0px -96px; }
+            &.bm { background-position: 0px -104px; }
+            &.bn { background-position: 0px -112px; }
+        }
+        &.lv10 { .size(8 * 8px, 8 * 8px); }
+        &.lv40 { .size(16 * 8px, 16 * 8px); }
+        &.lv99 { .size(30 * 8px, 16 * 8px); }
+    }
+    &.size16, &.zoom {
+        border-width: 2px;
+        .background('common/board16x16.gif', repeat);
+        td { 
+            .size(16px, 16px); 
+            .background('common/block16x16.png'); 
+            &.b0 { background-position: 0px 0px; }
+            &.b1 { background-position: 0px -16px; }
+            &.b2 { background-position: 0px -32px; }
+            &.b3 { background-position: 0px -48px; }
+            &.b4 { background-position: 0px -64px; }
+            &.b5 { background-position: 0px -80px; }
+            &.b6 { background-position: 0px -96px; }
+            &.b7 { background-position: 0px -112px; }
+            &.b8 { background-position: 0px -128px; }
+            &.bb { background-position: 0px -144px; }
+            &.bf { background-position: 0px -160px; }
+            &.bc { background-position: 0px -176px; }
+            &.bq { background-position: 0px -192px; }
+            &.bm { background-position: 0px -208px; }
+            &.bn { background-position: 0px -224px; }
+        }
+        &.lv10 { .size(8 * 16px, 8 * 16px); }
+        &.lv40 { .size(16 * 16px, 16 * 16px); }
+        &.lv99 { .size(30 * 16px, 16 * 16px); }
+    }
+    &.zoomable {
+        cursor:url(/cdn/images/common/zoom_in.cur),auto;
+        cursor: -webkit-zoom-in; 
+        cursor: -moz-zoom-in;
+        cursor: zoom-in;
+        &.zoom {
+            cursor:url(/images/common/zoom_out.cur),auto;
+            cursor: -webkit-zoom-out; 
+            cursor: -moz-zoom-out;
+            cursor: zoom-out;
+        }
+    }
+}

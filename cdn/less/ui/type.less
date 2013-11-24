@@ -1,0 +1,62 @@
+// Type.less
+// --------------------------
+
+
+// Base settings
+// -------------------
+body, div, h1, h2, h3, h4, h5, h6, p, td, input, button, label, select, textarea {
+	font-family: @baseFont; 
+	.text( @baseColor, @baseSize, @baseHeight );
+}
+
+// Titles
+// -------------------
+h1 {
+	margin: 0 0 @titleHeight / 2;
+	.text( @titleColor, @titleSize, @titleHeight );
+	.text-shadow;
+}
+
+h2, h3, h4, h5, h6, legend, caption {
+	margin: 0 0 @subtitleHeight / 2;
+	.text( @subtitleColor, @subtitleSize, @subtitleHeight );
+	.text-shadow;
+}
+
+// Text
+// -------------------
+em, strong {
+	color: @strongColor;
+	margin: 0 5px;
+}
+
+// Horizontal rules
+// -------------------
+hr {
+	border: 0;
+	margin: @textHeight 0;
+	border-top: 1px solid @hrColor;
+	border-bottom: 1px solid darken(@hrColor, 20%);
+	clear: both;
+	.text-shadow;
+	&.up { margin-bottom: 0; }
+	&.down { margin-top: 0; }
+}
+
+// Typegraphic
+// -------------------
+p {
+	.text( @textColor, @textSize, @textHeight );
+	text-indent: 0em;
+	margin: 0.6em 0;
+	em { color: @noticeColor }
+}
+
+// Links
+// -------------------
+a { 
+	color: @linkColor;
+	&:hover { color: @hoverColor; text-decoration: none }
+	&.active { color: @activeColor }
+	&.disabled { color: @disabledColor; cursor: default }
+}

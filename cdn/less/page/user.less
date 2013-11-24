@@ -1,0 +1,159 @@
+// User.less
+// --------------
+
+#user_list {
+    min-width: 500px;
+    .user { min-width: 115px }
+    .title { width: 90px;
+    }
+    .level { 
+        margin-right: 5px;
+    }
+    .score_time, .score_3bvs {
+        em { color: @golden }
+    }
+}
+
+#user_view {
+    h1 { 
+        .inline;
+        margin: 0 0 10px 0;
+    }
+    h2 { 
+        .inline;
+        margin: 0 0 10px 0;
+        .text(@subtitleColor, @subtitleSize, @titleHeight);
+    }
+    .info { .keepSize;
+        padding-right: 0;
+        .avatar {
+            .left; margin-right: 15px;
+        }
+        .gender {
+            .inline; margin-right: 10px;
+            vertical-align: text-bottom;
+        }
+        .title, .title:hover {
+            em { font-size: @subtitleSize }
+        }
+        .scores {
+            th { 
+                min-width: 2.5em;
+                height: 36px;
+                .text( @grayLighter, @textSize, @textHeight );
+            }
+            td {
+                .oneLine;
+            }
+            .beg { em { color: @light } }
+            .int { em { color: @lighter } }
+            .exp { em { color: @white } }
+            .sum { em { color: @yellow } }
+        }
+    }
+    .profile {
+        h2 { .left; }
+        .id { 
+            .right;
+            line-height: @titleHeight;
+            em { padding: 0 5px }
+         }
+        .form { clear: both; }
+    }
+    .radar {
+        .chart {
+            margin: -15px;
+            .size(222px, 222px); 
+        }
+    }
+    .videos {
+        h2 { .left; }
+        .id { 
+            .right;
+            line-height: @titleHeight;
+            em { padding: 0 5px }
+        }
+        .chart {
+            clear: both;
+            margin: -15px;
+            .size(222px, 222px);
+        }
+    }
+}
+
+.user_info_cell {
+    .keepSize;
+    span { 
+        .inline; margin-right: 8px;
+        .text(@gray, @baseSize);
+    }
+    p {
+        .block;
+        .oneLine;
+        clear: both;
+        text-indent: 0em;
+        margin: 5px 0;
+    }
+    em { 
+        padding: 0 5px;
+        .text(@light, @subtitleSize);
+    }
+    a {
+        &:hover { em { color: @hoverColor } };
+    }
+    .name { 
+        .left;
+        .text(@subtitleColor, @titleSize, @titleHeight) ;
+        .text-over(@hoverColor);
+    }
+    .gender {
+        margin: 10px 0 0 8px;
+        vertical-align: text-bottom;
+    }
+    .id {
+        .right; margin-right: 0;
+        line-height: @titleHeight;
+        em { 
+            font-weight: bold;
+            font-size: @baseSize; 
+        }
+    }
+    .avatar {
+        margin: 15px 0 0 0;
+    }
+    .title, .title:hover {
+        margin-left: 10px;
+        em { font-size: @subtitleSize }
+    }
+    .intro {
+        .text(@baseColor, @textSize, @textHeight); margin: 10px 0 0 0;
+    }
+}
+
+.avatar {
+    .inline; margin: 0; padding: 0;
+    .border();
+    .background('common/avatar.png');
+    img { .size(100%, 100%); }
+    &.size192 { .size(192px, 192px) }
+}
+
+.gender {
+    .inline;
+    .size(14px, 14px);
+    .background('common/gender14x14.png');
+    &.male { .background-pos(top) }
+    &.female { .background-pos(bottom) }
+    &.big { 
+        .size(20px, 20px);
+        .background('common/gender20x20.png');
+        &.male { .background-pos(top) }
+        &.female { .background-pos(bottom) }
+    }
+}
+h1 .gender {
+    .size(20px, 20px);
+    .background('common/gender20x20.png');
+    &.male { .background-pos(top) }
+    &.female { .background-pos(bottom) }
+}

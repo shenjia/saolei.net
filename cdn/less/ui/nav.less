@@ -1,0 +1,35 @@
+// Nav.less
+// ---------------------------
+
+.nav {
+	h1 { .left; }
+	ul { .right; }
+	li { .left; padding: 0 5px;
+		a { .text( @textColor, 14px, 32px ); .text-over( @hoverColor ); }
+		&.active > a, &.light.active > a { color: @selectedColor; .text-over( @hoverColor ); }
+		&.light > a { color: @lighter; .text-over( @hoverColor ); }
+	}
+	.popMenu {
+		#position.container;
+		.menu {
+			.border;	
+			.size( auto );
+			.background( @dark );
+			.hide;
+			#position.rt( 0, 32px );
+			li {
+				.oneLine;
+				.size( 100%, 32px );
+				padding: 2px 10px;
+				a { .block; .size( 100%, 32px ); }
+			}
+		}
+		&:hover { 
+			& > a { color: @lighter; .text-over( @hoverColor ); }
+			&.active > a { color: @selectedColor; .text-over( @hoverColor ); }
+			.background( @dark );
+			.menu { .show; } 
+		}
+	}
+	.box & ul { margin-top: 10px; }
+}

@@ -1,0 +1,1 @@
+return Math.floor( this.value / 60 ) +'m';

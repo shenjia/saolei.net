@@ -1,0 +1,60 @@
+// Index.less
+// -------------------------
+
+.content {
+	.text;
+}
+.colorblock {
+	.inline; .size(16px);
+	&.black { background: @black; }
+	&.darker { background: @darker; }
+	&.dark { background: @dark; }
+	&.grayDarker { background: @grayDarker; }
+	&.gray { background: @gray; }
+	&.grayLighter { background: @grayLighter; }
+	&.light { background: @light; }
+	&.lighter { background: @lighter; }
+	&.white { background: @white; }
+	&.blue { background: @blue; }
+	&.cyan { background: @cyan; }
+	&.green { background: @green; }
+	&.purple { background: @purple; }
+	&.red { background: @red; }
+	&.golden { background: @golden; }
+	&.yellow { background: @yellow; }
+	&.pink { background: @pink; }
+	&.magenta { background: @magenta; }
+}
+
+#colors {
+	.black { color: @black; }
+	.darker { color: @darker; }
+	.dark { color: @dark; }
+	.grayDarker { color: @grayDarker; }
+	.gray { color: @gray; }
+	.grayLighter { color: @grayLighter; }
+	.light { color: @light; }
+	.lighter { color: @lighter; }
+	.white { color: @white; }
+	.blue { color: @blue; }
+	.cyan { color: @cyan; }
+	.green { color: @green; }
+	.purple { color: @purple; }
+	.red { color: @red; }
+	.golden { color: @golden; }
+	.yellow { color: @yellow; }
+	.pink { color: @pink; }
+	.magenta { color: @magenta; }
+}
+
+#titles_page {
+    h1 { 
+        .inline;
+        margin: 0 10px 10px 0;
+    }
+    h2 { 
+        .inline;
+        margin: 0 0 10px 0;
+        .text(@subtitleColor, @subtitleSize, @titleHeight);
+    }
+}

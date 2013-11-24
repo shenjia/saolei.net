@@ -1,0 +1,15 @@
+// Box.less
+// ----------------------
+.box {
+	.background( @boxColor ); 
+	.border;
+	.box-shadow;
+	.border-radius;
+	padding: 30px;
+	margin: 16px 8px;
+    .text-shadow;
+    //&:hover { border-color: lighten(@grayDarker, 5%) }
+}
+a:hover .box { 
+    border-color: lighten(@borderColor, 10%);
+}

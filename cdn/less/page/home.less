@@ -1,0 +1,49 @@
+// Home.less
+// -----------------
+
+#home {
+    .table {
+        td { padding: 5px }
+    }
+}
+
+#newbie {
+
+}
+
+#top10 {
+    .table {
+        .rank { padding: 0 }
+        .user { padding-left: 0 }
+    }
+}
+
+#news {
+    .table {
+        width: 100%;
+        td {
+            padding: 8px 8px 8px 0;
+            .text(@baseColor, @baseSize, @subtitleHeight);
+        }
+    }
+    .title {
+        margin: 0 5px;
+    }
+    .record {
+        margin: 0 5px;
+        .text(@textColor, @textSize);
+    }
+    .increase {
+        .inline; .size(16px, 16px);
+        .background('common/increase.png');
+        vertical-align: baseline;
+    }
+    .original {
+        .text(@subtitleColor, @subtitleSize)
+    }
+    .score {
+        .text(@noticeColor, @subtitleSize); .text-over(@hoverColor);
+        font-weight: bold;
+    }
+    #news_loader { margin-top: 15px }
+}

@@ -1,0 +1,45 @@
+// Button.less
+// -------------------------
+button, a.button {
+    .inline;
+    .border( @grayDarker );
+    .border-radius( 5px );  
+    #gradient.vertical( @grayDarker , @dark);
+    .text( @lighter, @textSize + 2, @textHeight );
+    .text-shadow;
+    .box-shadow;
+    -webkit-appearance: none;
+    margin-right: @textPadding;
+    font-size: @subtitleSize;
+    line-height: @subtitleHeight;
+    padding: @textPadding @textPadding * 3;
+
+    &:hover {
+        color: @white;
+        #gradient.vertical( lighten(@grayDarker, 1%) , lighten(@dark, 1%) );
+    }
+    &:active {
+        color: @activeColor;;
+    }
+    &.active { 
+        color: @activeColor; .text-over( @hoverColor );
+    }
+    &.danger {
+        color: darken(@errorColor, 10%); .text-over( @errorColor );
+    }
+    &.disabled, &.disabled:hover, &.ing, &.ing:hover {
+        cursor: default;
+        color: @grayDarker;
+        #gradient.vertical( darken(@grayDarker, 3%) , darken(@dark, 3%) );
+    }
+    &.big {
+        font-size: @titleSize;
+        line-height: @subtitleHeight;
+        padding: @textPadding * 2 @textPadding * 5;
+    }
+    &.small {
+        font-size: @textSize;
+        line-height: @textHeight;
+        padding: @textPadding / 2 @textPadding * 1.5;
+    }
+}

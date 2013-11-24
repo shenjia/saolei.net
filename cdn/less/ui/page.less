@@ -1,0 +1,70 @@
+// Page.less
+// -----------------------
+
+// Body
+// -----------------------
+body {
+	.background( @backgroundColor );
+}
+
+// Page
+// -----------------------
+#page {
+	#body { 
+		//min-width: 960px;
+		.keepSize;
+		.center;
+	}
+	&.main {
+	    .center; width: 62%; min-width: 620px; max-width:960px 
+	    .header {
+	        .keepSize; #position.container; padding-top: 25px;
+	        h1 { .left; margin: 0; }
+	        .switcher { #position.rb(0, 0) }
+	    }
+	}
+	&.two_columns {
+	    .keepSize;
+	    .center; width: 80%; min-width: 620px; max-width: 960px;
+	    li { 
+	        &.sidebar { 
+	        	.left; width: 222px; 
+	            .box { width: 192px }
+	        }
+	        &.main { 
+	        	.left; width: 70%; min-width: 620px;
+	        }
+	    }
+	    //&:hover { border-color: lighten(@grayDarker, 5%) }
+	}
+	a:hover {
+		h1, h2 { color: @hoverColor }
+	}
+}
+
+// Header
+// -----------------------
+#header { .background( @headerColor ); .border-bottom;
+	.wrapper { height: 32px; padding: 0 15px; }
+	.logo { .left; 
+		a { 
+			h1 { 
+				.left;
+				.text( @titleColor, @subtitleSize, 32px ); .text-over( @hoverColor ) 
+			}
+			h2 {
+				.left; margin: 0 0 0 5px;
+				.text( @subtitleColor, @baseSize, 32px );
+			}
+		}
+	}
+}
+
+// Footer
+// ------------------------
+#footer {
+	.wrapper { padding: 20px 0; .ta(center);
+		p { text-indent: 0em; }
+		a { .text( @gray, @baseSize, 20px ); .text-over( @hoverColor ) } 
+	}
+}

@@ -1,0 +1,39 @@
+// Switcher.less
+// ---------------------
+
+.filters { 
+    .keepSize; clear: both;
+    .tabs { clear: left }
+}
+
+.switcher { 
+    #position.rb(33px, 20px);
+    a {
+        .block; .left; .size(16px, 16px); margin: 0 5px;
+        .background('common/view_mode.png');
+        &.list {
+            .background-pos(left top);
+            .background-over(left bottom);
+            &.current { 
+                .background-pos(left center);
+                .background-over(left bottom);
+            }
+        }
+        &.thumb {
+            .background-pos(center top);
+            .background-over(center bottom);
+            &.current { 
+                .background-pos(center center);
+                .background-over(center bottom);
+            }
+        }
+        &.detail {
+            .background-pos(right top);
+            .background-over(right bottom);
+            &.current { 
+                .background-pos(right center);
+                .background-over(right bottom);
+            }
+        }
+    }
+}

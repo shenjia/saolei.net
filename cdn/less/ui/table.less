@@ -1,0 +1,21 @@
+// Table.less
+// ------------------
+
+.table {
+    tr {
+        &:hover, &.highlight {
+            .background(@grayDarker);
+        }
+    }
+    th {
+        padding: 5px 20px;
+        .text( @grayLighter, @subtitleSize, @subtitleHeight );
+        .border-bottom;
+    }
+    td {
+        .text( @textColor, @textSize, @textHeight );
+        padding: 8px 20px;
+    }
+    em { color: @golden }
+    &.full { width: 100% }
+}

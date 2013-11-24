@@ -1,0 +1,117 @@
+// Video.less
+// -------------------
+
+#video_list_header { 
+    #position.container; 
+    padding: 20px 30px;
+    h1 { 
+        .left; margin-bottom: 10px;
+        .avatar_link { .text(@titleColor, @titleSize, @titleHeight) }
+        span { margin-right: 8px }
+        ins { .text(@subtitleColor, @subtitleSize, @titleHeight); text-decoration: none }
+    }
+    .uploadVideo { .right }        
+}
+
+#video_list { 
+    &.order_by_id {
+        .id { em { color: @golden } }
+    }
+    &.order_by_time {
+        .score_time { em { color: @golden } }   
+    }
+    &.order_by_3bvs {
+        .score_3bvs { em { color: @golden } }
+    }
+    &.mode_list {
+        .software { .hide }
+        .score_time { width: 110px; }
+        .board_3bv { width: 66px }
+        .score_3bvs { width: 105px; }
+        .user { width: 220px; }
+        p { overflow: inherit; margin: 3px 0 }
+    }
+    &.mode_thumb {
+        .software { .hide }
+        .board { .right; margin-right: 0px }   
+        p { margin: 3px 0 }
+    }
+    &.mode_detail {
+        .board { .right; margin-right: 0px }   
+        p { margin: 12px 0 0 0 }
+    }
+}
+
+#video_view {
+    .board { .left; margin: 5px 20px 20px 0 }
+    .video_cell {
+        .keepSize;
+        .info { .left; }
+        p { margin: 12px 0 0 0; }
+        h1 { 
+            .left;
+            .text(@subtitleColor, @titleSize, @titleHeight);
+            em { .text(@titleColor, @titleSize, @titleHeight) }
+            ins { 
+                text-decoration: none;
+                .text(@titleColor, @subtitleSize, @titleHeight);
+            }
+        }
+        h2 { 
+            .right;
+            margin-top: 0;
+            line-height: @titleHeight;
+        }
+        .counters { .right; 
+            margin-top: 15px;
+            line-height: @titleHeight;
+        }
+    }
+}
+
+.video_cell { 
+    #position.container;
+    table {
+        width: 100%;
+        td { vertical-align: top;
+            &.right { .ta(right) }
+        }
+    }
+    p {
+        .inline;
+        .oneLine;
+        text-indent: 0em;
+        margin: 0;
+    }
+    span { 
+        .inline; margin-right: 8px;
+        .text(@gray, @baseSize);
+    }
+    em { 
+        padding: 0 5px;
+        .text(@light, @subtitleSize);
+    }
+    .id { 
+        .inline;
+        em { .text(@light, @baseSize) } 
+    }
+    .level { margin-right: 0 }
+    .author { margin-right: 5px }
+    .reviewer {
+        .inline;
+        margin-right: 5px;
+    }
+    .review_time, .software, .signature { 
+        .inline; 
+        em { .text(@light, @baseSize) }
+    }
+    .status {
+        &.st0 { color: @red }
+        &.st10 { color: @green }
+        &.st20 { color: @light }
+    }
+    .create_time { em { .text(@light, @baseSize) } }
+    &:hover {
+        .score_time em { color: @hoverColor }
+    }
+}

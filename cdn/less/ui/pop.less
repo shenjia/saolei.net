@@ -1,0 +1,18 @@
+// Pop.less
+// ---------------------
+
+#pop { 
+	position: fixed; 
+	z-index: @zindexModal; 
+	.box { width: auto; }
+	.flash { 
+		.text( @titleColor, @titleSize, @titleHeight ); 
+	}
+}
+
+#pop_mask { 
+	#position.lt( 0, 0, fixed ); 
+	.size( 100% );
+	.background( @black, 0.5 );
+	z-index: @zindexModalShadow; 
+}

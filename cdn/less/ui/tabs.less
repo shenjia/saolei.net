@@ -1,0 +1,13 @@
+// Tabs.less
+// ----------------
+
+.tabs {
+    .left;
+    li { .left; padding: 0 5px;
+        a { .text( @textColor, 14px, 32px ); .text-over( @hoverColor ); }
+        &.current > a, &.light.current > a { color: @selectedColor; .text-over( @hoverColor ); }
+        &.light > a { color: @lighter; .text-over( @hoverColor ); }
+
+    }
+    li:first-child { padding-left: 0 }
+}

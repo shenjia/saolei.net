@@ -1,0 +1,136 @@
+// Form.less
+// Styles for form elements
+// ------------------------------------
+
+// Active Form
+// -------------------------
+.form {
+
+	th { 
+		padding: 0.5em 1em 0.5em 0;
+		.text( @grayLighter, @textSize, @textHeight );
+		.oneLine; .ta(right);
+		border: none;
+		vertical-align: top;
+	}
+	td { 
+		#position.container;
+		padding: 0.5em 0;
+		.text( @textColor, @textSize, @textHeight ); 
+		vertical-align: top;
+		div { .left; }
+		&.middle { vertical-align: middle; }
+	}
+
+	// Hints, Errors
+	.checkStatus { .hide; }	
+	.hintMessage, .errorMessage { 
+		.hide; 
+		.size( auto ); 
+		.multiLine;
+		line-height: @textHeight * 1.5;
+		padding-left: @textPadding;
+		em { margin: 0 @textPadding; color: @golden; }
+	}
+	.hintMessage { color: @hintColor; }
+	.errorMessage { color: @errorColor; }
+
+	// Status
+	.success {
+		.checkStatus {
+			.inline; 
+			.size( 32px );
+			.background( 'form/success.png' );
+			.noText; 
+			margin-left: @textPadding / 2;
+			vertical-align: top;
+		}
+	}
+	.focus, .error.focus {
+		.checkStatus, .errorMessage { .hide; }
+		.hintMessage { .show; .inline; }
+	}
+	.error { 
+		.errorMessage { .show; .inline; }
+		.hintMessage { .hide; }
+	}
+}
+
+// Input fields
+// ----------------------------------
+input[type="text"], 
+input[type="password"], 
+input[type="search"], 
+textarea { 
+	.border( @gray ); 
+	.background( @black );
+	.box-shadow;
+	.text( @textColor, @textSize, @textHeight );
+	padding: @textPadding / 2;
+	outline: none; 
+	vertical-align: top;
+	.focus &, .error.focus &, .success.focus & {
+		.border( @activeColor );
+		.background( @darker );
+		color: @activeColor;
+	}
+	&.error, .error & {
+		.border( @errorColor );
+		.background( @darker );
+		color: @errorColor;
+	}
+	&.success, .success & {
+		.border( @successColor );
+		color: @successColor;
+	}
+}
+
+// Select options
+// -------------------------
+select {
+	.border( @gray ); 
+	.background( @light );
+	.box-shadow;
+	.text( @black, @textSize, @textHeight );
+	vertical-align: middle;
+}
+
+// Radio buttons
+// -------------------------
+.radioButton {
+	cursor: pointer;
+	.inline;
+	.size( auto, 32px );
+	.background( 'form/radioButton.png' );
+	.text( @textColor, @textSize, 32px );
+	.user-select( none );
+	margin-top: @textPadding / 3;
+	padding: 0 @textPadding 0 32px;
+	&.checked {
+		background-position: left bottom;
+	}
+}
+
+// Check boxs
+// -------------------------
+.checkBox {
+	cursor: pointer;
+	.inline;
+	.size( auto, 32px );
+	.background( 'form/checkBox.png' );
+	.text( @textColor, @textSize, 32px );
+	.user-select( none );
+	margin-top: @textPadding / 3;
+	padding: 0 @textPadding 0 32px;
+	&.checked {
+		background-position: left bottom;
+	}	
+}
+
+// Labels
+// -------------------------
+label {
+	.oneLine;
+	.text( @grayLighter, @textSize, @textHeight * 1.6 );
+	padding-right: @textPadding / 2;
+}

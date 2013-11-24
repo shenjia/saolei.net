@@ -1,0 +1,22 @@
+// Pager.less
+// ---------------------
+
+.pager-container {
+    width: 100%;
+    .ta(center);
+}
+.pager {
+    display:inline-block;
+    li { .left;
+        a { 
+            padding: 0 5px;
+            .text( @textColor, 24px, 32px ); .text-over( @hoverColor ); 
+        }
+        &.selected {
+            a { color: @selectedColor }
+        }
+        &.splitter {
+            .text( @disabledColor, 24px, 32px );
+        }
+    }
+}
