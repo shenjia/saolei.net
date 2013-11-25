@@ -2,10 +2,10 @@
 // -------------------
 
 .name_link {
-    color: @lighter; font-size: @textSize;
+    font-size: @textSize;
 }
 .avatar_link {
-    color:  @lighter; font-size: @textSize;
+    font-size: @textSize;
     margin-right: 0
 }
 .user_title {
@@ -13,6 +13,9 @@
 }
 
 #page {
+    .name_link, .avatar_link {
+        color:  @lighter; 
+    }
     a.name_link, a.avatar_link {
         .text-over(@hoverColor);
     }
