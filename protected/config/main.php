@@ -20,7 +20,6 @@ return array(
 		'application.forms.*',
 		'application.helpers.*',
 		'application.components.*',
-		'application.widgets.*',
 		'zii.widgets.CMenu'
 	),
 
