@@ -2,12 +2,12 @@
 // ------------------
 
 .table {
-    tr {
+    tbody tr {
         &:hover, &.highlight {
             .background(@grayDarker);
         }
     }
-    th {
+    thead td {
         padding: 5px 20px;
         .text( @grayLighter, @subtitleSize, @subtitleHeight );
         .border-bottom;

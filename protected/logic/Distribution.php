@@ -50,14 +50,14 @@ class Distribution
         foreach (GradeConfig::$grades as $grade) {
             if (in_array($grade, GradeConfig::$fixed_grades)) {
                 $fixed = GradeConfig::$distribution[$grade];
-                $distribution .= ',' . UserScores::getScore($level, $order, $fixed);
+                $distribution .= ',' . UserScores::getDistributionScore($level, $order, $fixed);
                 continue;
             } else if ($grade == $last) {
                 $direct = RankingConfig::$order_direction[$order] ? 'asc' : 'desc';
-                $distribution .= ',' . UserScores::getScore($level, $order, 0, $direct);
+                $distribution .= ',' . UserScores::getDistributionScore($level, $order, 0, $direct);
             } else {
                 $offset = $fixed + intval(($total - $fixed) * GradeConfig::$distribution[$grade]);
-                $distribution .= ',' . UserScores::getScore($level, $order, $offset);
+                $distribution .= ',' . UserScores::getDistributionScore($level, $order, $offset);
             }
         }
         return trim($distribution, ',');
@@ -71,15 +71,15 @@ class Distribution
         foreach (TitleConfig::$titles as $title) {
             if (in_array($title, TitleConfig::$fixed_titles)) {
                 $fixed = TitleConfig::$distribution[$title] - 1;
-                $distribution .= ',' . UserScores::getScore(TitleConfig::LEVEL, TitleConfig::ORDER, $fixed);
+                $distribution .= ',' . UserScores::getDistributionScore(TitleConfig::LEVEL, TitleConfig::ORDER, $fixed);
                 continue;
             } else if ($title == $last) {
                 $direct = RankingConfig::$order_direction[TitleConfig::ORDER] ? 'asc' : 'desc';
-                $distribution .= ',' . UserScores::getScore(TitleConfig::LEVEL, TitleConfig::ORDER, 0, $direct);
+                $distribution .= ',' . UserScores::getDistributionScore(TitleConfig::LEVEL, TitleConfig::ORDER, 0, $direct);
             } else {
                 $rate = TitleConfig::$distribution[$title];
                 $offset = $fixed + intval(($total - $fixed) * $rate);
-                $distribution .= ',' . UserScores::getScore(TitleConfig::LEVEL, TitleConfig::ORDER, $offset);
+                $distribution .= ',' . UserScores::getDistributionScore(TitleConfig::LEVEL, TitleConfig::ORDER, $offset);
             }
         }
         return trim($distribution, ',');

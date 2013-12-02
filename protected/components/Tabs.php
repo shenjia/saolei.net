@@ -5,6 +5,9 @@ class Tabs extends CWidget
 	public $current = 1;        //默认选择（从1开始计算）
 	public $tabs;               //导航列表，可传名称或array
 	public $options;            //默认参数，如不提供则从Controler->options获取
+	public $ignoreParams = array(
+	    'page'
+	);
 
 	public static $level = array(
 	    'all' => '全部',
@@ -49,8 +52,10 @@ class Tabs extends CWidget
 	protected function getUrl ( $name, $item )
 	{
 	    $params = URL::parseParams(Yii::app()->request->querystring);
-	    unset($params['page']);
 	    $params = array_merge( $params, $this->options, array( $name => $item ) );
+	    foreach ($this->ignoreParams as $name) {
+	        if (isset($params[$name])) unset($params[$name]);   
+	    }
 		$route = $this->controller->action->id == $this->controller->defaultAction 
 		    ? $this->controller->id
 		    : $this->controller->route;

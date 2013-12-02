@@ -2,7 +2,8 @@
 class RankingConfig 
 {
     const DEFAULT_LEVEL = 'sum';
-    const DEFAULT_ORDER = 'time'; 
+    const DEFAULT_ORDER = 'time';
+    const PAGESIZE = 20; 
     
     public static $levels = array(
         'beg', 'int', 'exp', 'sum'

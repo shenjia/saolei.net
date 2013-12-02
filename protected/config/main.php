@@ -72,7 +72,7 @@ return array(
 				array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
-                    //'categories'=>'application.*',  
+                    'categories'=>'application.*',  
 				),
 				/*
 				array(

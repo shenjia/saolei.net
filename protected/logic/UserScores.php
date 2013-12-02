@@ -10,7 +10,7 @@ class UserScores
         '3bvs' => 'desc'
     );
     
-    public static function getScore($level, $order, $offset = 0, $direct = null) 
+    public static function getDistributionScore($level, $order, $offset = 0, $direct = null) 
     {
         $field = $level . '_' . $order;
         $score = UserScoresModel::model()->find(array(

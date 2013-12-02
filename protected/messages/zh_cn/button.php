@@ -21,6 +21,9 @@ return array(
 	'forget' => '找回密码',
 	'register' => '注册新用户',
 
+    // ranking
+    'whereAmI' => '我在哪里?',
+
 	// video
 	'upload' => '上传',
 	'uploadVideo' => '上传录像',

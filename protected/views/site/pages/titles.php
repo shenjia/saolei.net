@@ -11,13 +11,16 @@ if ($user = User::getCurrentUser()) {
     <h1><?= Yii::t('title', 'titles') ?></h1>
     <h2>(<?= date('Y年n月j日', $create_time); ?>颁布)</h2>
     <table cellpadding="0" cellspacing="0" class="table">
+    <thead>
     	<tr>
-    		<th>级别</th>
-    		<th>军衔</th>
-    		<th class="tal">要求</th>
-    		<th>编制</th>
-    		<th></th>
+    		<td>级别</td>
+    		<td>军衔</td>
+    		<td class="tal">要求</td>
+    		<td>编制</td>
+    		<td></td>
     	</tr>
+    </thead>
+    <tbody>
     <?php foreach (TitleConfig::$titles as $i => $title):?>
     	<tr <?php if ($current == $title):?>class="highlight"<?php endif;?>>
     		<td class="tac"><?= $title_count - $i ?></td>
@@ -54,6 +57,7 @@ if ($user = User::getCurrentUser()) {
         	<td><?php if ($current == $title):?><span class="green">我的军衔</span><?php endif;?></td>
         </tr>
     <?php endforeach;?>
+    </tbody>
     </table>
     
     <hr/>    

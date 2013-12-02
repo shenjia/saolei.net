@@ -94,22 +94,12 @@ class Controller extends CController
 	{
 		return str_replace(self::TITLE_SPLITTER . Yii::t( 'title', 'site' ), '', $this->pageTitle);	
 	}
-	
-    /**
-     * 需要登录，可指定跳转的地址
-     * @param string $url 
-     */
-    public function requireLogin ( $url = '' ) 
-    {
-        if ( !self::isLogin() ) {
-            if ( $url !== '') {
-                //指定跳转地址，直接跳转
-                Yii::app()->request->isAjaxRequest ? die( 'location=\'' . $url . '\'' ) : header( 'location:' . $url );
-            } else {
-                //未指定跳转地址，弹出登录窗或跳到登录页
-                Yii::app()->request->isAjaxRequest ? die( '$.login()' ) : header( 'location:/login/' . urlencode( urlencode( $_SERVER['REQUEST_URI'] ) ) );
-            }
-            exit();
-        }
-    }
+
+	/**
+	 * 取得参数
+	 */
+    public function getActionParams()
+	{
+		return array_merge( $_GET, $_POST );
+	}
 }

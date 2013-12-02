@@ -3,11 +3,11 @@ require_once __DIR__.'/../models/UserAuthModel.php';
  
 class UserAuth
 {
-    public static function getRole($id = null) 
+    public static function getRole($userId = null) 
     {
-        if (is_null($id)) {
+        if (is_null($userId)) {
             return intval(Yii::app()->user->role);
-        } else if ($auth = UserAuthModel::model()->findByPk($id)) {
+        } else if ($auth = UserAuthModel::model()->findByPk($userId)) {
             return (int) $auth->role;    
         } else {
             return UserConfig::ROLE_UNKNOWN;
@@ -25,6 +25,11 @@ class UserAuth
         if (is_null($role)) $role = self::getRole();
         return $role == UserConfig::ROLE_ADMINISTRATOR
             || $role == UserConfig::ROLE_MANAGER;
+    }
+    
+    public static function findById($userId) 
+    {
+        return UserAuthModel::model()->findByPk($userId);
     }
     
     public static function findByName($username) 

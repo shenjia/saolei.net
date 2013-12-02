@@ -38,21 +38,6 @@
             	<?php endforeach;?>
             </table>
         </div>
-        <div class="profile box">
-			<h2>个人资料</h2>
-			<span class="id">ID.<em><?= $user->id ?></em></span>
-			<hr>
-			<table class="form">
-				<?php foreach (array('nickname', 'self_intro', 'interest', 'qq', 'mouse', 'pad') as $field) {
-				    if ($user->info->$field) {
-                        ?><tr>
-                            <th><?php echo Yii::t('user', $field);?></th>
-                            <td><?= CHtml::encode($user->info->$field);?></td>            
-                        </tr><?php				        
-				    }
-				}?>
-            </table>
-        </div>
         <?php if (!empty($news)):?>
         <div id="news" class="box">
         	<h2>最新动态</h2>
@@ -74,6 +59,21 @@
         	?>
         </div>
         <?php endif;?>
+        <div class="profile box">
+			<h2>个人资料</h2>
+			<span class="id">ID.<em><?= $user->id ?></em></span>
+			<hr>
+			<table class="form">
+				<?php foreach (array('nickname', 'self_intro', 'interest', 'qq', 'mouse', 'pad') as $field) {
+				    if ($user->info->$field) {
+                        ?><tr>
+                            <th><?php echo Yii::t('user', $field);?></th>
+                            <td><?= CHtml::encode($user->info->$field);?></td>            
+                        </tr><?php				        
+				    }
+				}?>
+            </table>
+        </div>
     </li>
     <li class="sidebar">
     	<?php $this->renderPartial('/user/_radar', array('user' => $user))?>
