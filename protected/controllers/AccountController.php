@@ -112,8 +112,9 @@ class AccountController extends Controller
 	 */
 	public function actionLogout()
 	{
+	    $url = Yii::app()->user->returnUrl ? Yii::app()->user->returnUrl : Yii::app()->homeUrl;
 		Yii::app()->user->logout();
-		$this->redirect( Yii::app()->homeUrl );
+		$this->redirect( $url );
 	}
 	
 	/**

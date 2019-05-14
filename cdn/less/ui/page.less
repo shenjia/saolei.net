@@ -24,7 +24,6 @@ body {
 	    }
 	}
 	&.two_columns {
-	    .keepSize;
 	    .center; width: 80%; min-width: 620px; max-width: 960px;
 	    li { 
 	        &.sidebar { 
@@ -63,6 +62,7 @@ body {
 // Footer
 // ------------------------
 #footer {
+	clear: both;
 	.wrapper { padding: 20px 0; .ta(center);
 		p { text-indent: 0em; }
 		a { .text( @gray, @baseSize, 20px ); .text-over( @hoverColor ) } 

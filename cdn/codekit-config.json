@@ -147,16 +147,18 @@
       "initialSize" : 1925,
       "fileType" : 8192
     },
-    "\/images\/video\/status.png" : {
+    "\/less\/ui\/pop.less" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/video\/status.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/video\/status.png",
-      "initialSize" : 7065,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/less\/ui\/pop.less",
+      "outputStyle" : 2,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/less\/css\/pop.css",
+      "strictImports" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
     },
     "\/less\/ui\/name.less" : {
       "ignoreWasSetByUser" : 0,
@@ -167,19 +169,6 @@
       "outputStyle" : 2,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/less\/css\/name.css",
-      "strictImports" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
-    },
-    "\/less\/ui\/pop.less" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/less\/ui\/pop.less",
-      "outputStyle" : 2,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/less\/css\/pop.css",
       "strictImports" : 0,
       "fileType" : 1,
       "debugStyle" : 0
@@ -379,28 +368,6 @@
       "fileType" : 1,
       "debugStyle" : 0
     },
-    "\/js\/upload\/i18n\/ja.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/upload\/i18n\/ja.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/upload\/i18n\/ja-min.js",
-      "fileType" : 64
-    },
-    "\/images\/common\/avatar.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/common\/avatar.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/common\/avatar.png",
-      "initialSize" : 2075,
-      "fileType" : 8192
-    },
     "\/less\/ui\/tabs.less" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -413,6 +380,28 @@
       "strictImports" : 0,
       "fileType" : 1,
       "debugStyle" : 0
+    },
+    "\/images\/common\/avatar.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/common\/avatar.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/common\/avatar.png",
+      "initialSize" : 2075,
+      "fileType" : 8192
+    },
+    "\/js\/upload\/i18n\/ja.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/upload\/i18n\/ja.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/upload\/i18n\/ja-min.js",
+      "fileType" : 64
     },
     "\/js\/source\/_underscore.js" : {
       "ignoreWasSetByUser" : 0,
@@ -436,6 +425,17 @@
       "outputAbbreviatedPath" : "\/js\/jquery-min.js",
       "fileType" : 64
     },
+    "\/js\/swfobject.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/swfobject.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/swfobject-min.js",
+      "fileType" : 64
+    },
     "\/images\/common\/gender20x20.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -445,28 +445,6 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/common\/gender20x20.png",
       "initialSize" : 1851,
-      "fileType" : 8192
-    },
-    "\/js\/upload\/plupload.gears.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/upload\/plupload.gears.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/upload\/plupload.gears-min.js",
-      "fileType" : 64
-    },
-    "\/images\/common\/gender14x14.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/common\/gender14x14.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/common\/gender14x14.png",
-      "initialSize" : 1612,
       "fileType" : 8192
     },
     "\/js\/upload\/jquery.ui.plupload\/jquery.ui.plupload.js" : {
@@ -504,15 +482,26 @@
       "initialSize" : 2383,
       "fileType" : 8192
     },
-    "\/js\/swfobject.js" : {
+    "\/images\/common\/gender14x14.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/common\/gender14x14.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/common\/gender14x14.png",
+      "initialSize" : 1612,
+      "fileType" : 8192
+    },
+    "\/js\/upload\/plupload.gears.js" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/swfobject.js",
+      "inputAbbreviatedPath" : "\/js\/upload\/plupload.gears.js",
       "outputStyle" : 0,
       "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/swfobject-min.js",
+      "outputAbbreviatedPath" : "\/js\/upload\/plupload.gears-min.js",
       "fileType" : 64
     },
     "\/less\/config.less" : {
@@ -561,6 +550,19 @@
       "outputAbbreviatedPath" : "\/js\/upload\/plupload.silverlight-min.js",
       "fileType" : 64
     },
+    "\/less\/ui\/box.less" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/less\/ui\/box.less",
+      "outputStyle" : 2,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/less\/css\/box.css",
+      "strictImports" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
+    },
     "\/js\/upload\/i18n\/pl.js" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -582,19 +584,6 @@
       "outputAbbreviatedPath" : "\/images\/common\/close.png",
       "initialSize" : 2910,
       "fileType" : 8192
-    },
-    "\/less\/ui\/box.less" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/less\/ui\/box.less",
-      "outputStyle" : 2,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/less\/css\/box.css",
-      "strictImports" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
     },
     "\/less\/page\/ranking.less" : {
       "ignoreWasSetByUser" : 0,
@@ -833,17 +822,6 @@
       "initialSize" : 1278,
       "fileType" : 8192
     },
-    "\/js\/upload\/i18n\/ko.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/upload\/i18n\/ko.js",
-      "outputStyle" : 0,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/upload\/i18n\/ko-min.js",
-      "fileType" : 64
-    },
     "\/less\/page\/video.less" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -856,6 +834,17 @@
       "strictImports" : 0,
       "fileType" : 1,
       "debugStyle" : 0
+    },
+    "\/js\/upload\/i18n\/ko.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/upload\/i18n\/ko.js",
+      "outputStyle" : 0,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/upload\/i18n\/ko-min.js",
+      "fileType" : 64
     },
     "\/js\/upload\/jquery.plupload.queue\/img\/buttons.png" : {
       "ignoreWasSetByUser" : 0,
@@ -1054,6 +1043,19 @@
       "initialSize" : 135,
       "fileType" : 8192
     },
+    "\/less\/ui\/form.less" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/less\/ui\/form.less",
+      "outputStyle" : 2,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/less\/css\/form.css",
+      "strictImports" : 0,
+      "fileType" : 1,
+      "debugStyle" : 0
+    },
     "\/js\/upload\/i18n\/sv.js" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -1086,19 +1088,6 @@
       "syntaxCheckerStyle" : 0,
       "outputAbbreviatedPath" : "\/js\/upload\/plupload.flash-min.js",
       "fileType" : 64
-    },
-    "\/less\/ui\/form.less" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/less\/ui\/form.less",
-      "outputStyle" : 2,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/less\/css\/form.css",
-      "strictImports" : 0,
-      "fileType" : 1,
-      "debugStyle" : 0
     },
     "\/js\/upload\/jquery.plupload.queue\/img\/transp50.png" : {
       "ignoreWasSetByUser" : 0,
@@ -1292,8 +1281,8 @@
       "newcap" : 1,
       "forin" : 1,
       "regexdash" : 0,
-      "dojo" : 0,
       "browser" : 1,
+      "dojo" : 0,
       "eqnull" : 0,
       "node" : 0,
       "mootools" : 0,

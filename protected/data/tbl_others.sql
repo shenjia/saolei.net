@@ -43,3 +43,17 @@ CREATE TABLE IF NOT EXISTS `news` (
   PRIMARY KEY (`id`),
   INDEX (`user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+-- Comment --
+CREATE TABLE IF NOT EXISTS `comment` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `video` bigint(20) NOT NULL,
+  `user` bigint(20) NOT NULL,
+  `user_score` int(10) NOT NULL,
+  `content` text,
+  `status` smallint(6) NOT NULL default '0',
+  `create_time` bigint(20) NOT NULL,
+  `update_time` timestamp NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  INDEX (`video`, `create_time`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
