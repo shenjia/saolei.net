@@ -1,7 +1,7 @@
 <?php
 class NewsController extends Controller
 {
-	public function actionMore($cursor, $user = null, $size = PAGECOUNT) 
+	public function actionMore($cursor, $user = null, $size = NewsConfig::PAGESIZE) 
 	{
 	    if (Yii::app()->request->isAjaxRequest) {
     	    $news = News::getRecentNews(null, $user, $cursor, $size);

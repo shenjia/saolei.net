@@ -35,6 +35,7 @@ return array(
     'review' => '审核',
     'pass' => '通过',
     'ban'  => '屏蔽',
+    'comment' => '发表评论',
 
 	// message
 	'message' => '发送短消息',

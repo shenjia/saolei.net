@@ -13,7 +13,7 @@ class VideoModel extends BaseModel
 		    'author'   => array(self::BELONGS_TO, 'UserModel', 'user'),
 		    'reviewer' => array(self::BELONGS_TO, 'UserModel', 'review_user'),
 			'info'     => array(self::HAS_ONE, 'VideoInfoModel', 'id'),
-			'stat'     => array(self::HAS_ONE, 'VideoStatModel', 'id')
+			'stat'     => array(self::HAS_ONE, 'VideoStatModel', 'id'),
 		);	
     }
     

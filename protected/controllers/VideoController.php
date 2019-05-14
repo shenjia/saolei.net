@@ -38,7 +38,8 @@ class VideoController extends Controller
 	    if ($video) {
 	        $video->stat->uniqueAction('click');
             $this->render('view', array(
-                'video' => $video
+                'video' => $video,
+                'comments' => Comment::getList($id, 0, CommentConfig::TOP_NUMBER)
             ));	        
 	    } else {
 	        throw new CHttpException(404);   

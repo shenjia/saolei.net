@@ -40,6 +40,8 @@ class Controller extends CController
 	 */
 	protected function beforeAction ( $action )
 	{
+		if ( Yii::app()->controller->id != 'account' ) Yii::app()->user->returnUrl = Yii::app()->request->url;
+		
 		if ( in_array( '*', $this->publicActions ) ) return true;
 		
 		if ( in_array( $action->getId(), $this->publicActions ) ) return true;
