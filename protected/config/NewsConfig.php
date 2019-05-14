@@ -12,6 +12,8 @@ class NewsConfig
     const TYPE_VIDEO         = 30;
     const TYPE_ARTICLE       = 40;
     
+    const PAGESIZE = 20;
+    
     public static $types = array(
         self::TYPE_NOTICE        => 'notice',
         self::TYPE_NEWBIE        => 'newbie',

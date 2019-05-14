@@ -54,6 +54,16 @@
             	<?php $this->renderPartial('/video/_reviewPanel', array('video' => $video))?>
         	</div>
         </div>
+        <div class="post box">
+    	<?php if (User::isLogin()) $this->renderPartial('/comment/_form', array('video' => $video))?>
+    	</div>
+        <div class="comments">
+			<?php 
+			foreach ($comments as $comment) {
+			    $this->renderPartial('/comment/_cell', array('comment' => $comment));
+			}
+			?>        	
+        </div>
     </li>
     <li class="sidebar">
     	<?php $this->renderPartial('/user/_infoCell', array('user' => $video->author))?>
