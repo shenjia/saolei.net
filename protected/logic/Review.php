@@ -29,7 +29,8 @@ class Review
             if (!VideoModel::model()->updateByPk($videoId, array(
             	'status' => $status,
                 'review_user' => $userId,
-                'review_time' => time()
+                'review_time' => time(),
+                'update_time' => time()
             )))  throw new Exception('update video status failed');
             switch ($status) {
                 case VideoConfig::STATUS_BANNED:

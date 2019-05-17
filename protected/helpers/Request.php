@@ -57,6 +57,7 @@ class Request
 	 */
 	public static function mergeParams($params)
 	{
+    	if (!is_array($params)) return $params;
     	$query = array();
     	foreach ( $params as $param => $value ) {
     		array_push( $query, $param . '=' . urlencode( $value ) );

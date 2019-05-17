@@ -52,6 +52,7 @@ class UserAuth
     {
         if ($auth = self::findByName($username)) {
             $auth->password = md5($password . $auth->salt);
+            $auth->update_time = time();
             return $auth->save();
         } else {
             return false;

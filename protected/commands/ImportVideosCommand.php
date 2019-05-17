@@ -5,7 +5,7 @@ define('TO_PATH', __DIR__.'/../../videos');
 class ImportVideosCommand extends CConsoleCommand
 {
     private $tables = array(
-        'video', 'video_comment', 'video_info', 'video_stat', 
+        'video', 'comment', 'video_info', 'video_stat', 
         'video_scores_beg', 'video_scores_beg_nf',
         'video_scores_int', 'video_scores_int_nf',
         'video_scores_exp', 'video_scores_exp_nf',
@@ -17,9 +17,6 @@ class ImportVideosCommand extends CConsoleCommand
         foreach ($this->tables as $table) {
             Yii::app()->db->createCommand()->truncateTable($table);
         }
-        
-        $mysql = mysql_connect('127.0.0.1', Yii::app()->db->username, Yii::app()->db->password);
-        mysql_select_db('saolei');
         
         $user_alias = array(
             '2027' => '2517'
@@ -97,9 +94,7 @@ class ImportVideosCommand extends CConsoleCommand
                 if (file_exists($filepath)) {
                     $info = $this->get_video_info($filepath);
                     if (is_int($info)) {
-                        if (!in_array($video['Video_Player'], $problem_authors)) {
-                            $this->error($video['Video_Id'] . " parse failed. author [ " . $video['Video_Player'] . " ] " . $filepath);
-                        }
+                        $this->error($video['Video_Id'] . " parse failed." . Yii::t('error', $info) . " author [ " . $video['Video_Player'] . " ] " . $filepath);
                         continue;
                     }
                     if ($this->videoDuplicated($info)) {
@@ -116,9 +111,6 @@ class ImportVideosCommand extends CConsoleCommand
                         $this->error($video['Video_Id'] . ' : invalid signature!' . $info['player']);
                         continue;
                     }
-                    //echo date('Y-m-d',$info['create_time']).' / '.$video['Video_Time'].PHP_EOL;
-                    //echo $video['Video_Playero_Id'] . " ok!" . PHP_EOL;
-                    //var_dump($video,$info);die();
                     $this->insertVideo($video, $info);
                     $this->insertVideoInfo($video, $info);
                     $this->insertVideoStat($video, $info);
@@ -162,7 +154,7 @@ class ImportVideosCommand extends CConsoleCommand
             $review_time = $video['Video_Check'] == 'True' ? $this->timestamp($video['Video_CheckTime']) : NULL,
             $create_time = $this->timestamp($video['Video_Time']) 
         );
-        $ret = mysql_query($sql);
+        $ret = Yii::app()->db->createCommand($sql)->execute();
         if (!$ret) $this->error('insert video error!' . $sql);
     }
     
@@ -181,7 +173,7 @@ class ImportVideosCommand extends CConsoleCommand
             $real_time = intval($info['time'] * 1000),
             $create_time = $this->timestamp($video['Video_Time']) 
         );
-        $ret = mysql_query($sql);
+        $ret = Yii::app()->db->createCommand($sql)->execute();
         if (!$ret) $this->error('insert video info error!' . $sql);
     }
     
@@ -196,29 +188,27 @@ class ImportVideosCommand extends CConsoleCommand
             $score_3bvs = ((int)$info['3bv'] >= VideoConfig::MIN_3BV_FOR_3BVS) ? intval(($info['3bv'] / $score_time) * 1000000) : 0,
             $create_time = $this->timestamp($video['Video_Time']) 
         );
-        $ret = mysql_query($sql);
+        $ret = Yii::app()->db->createCommand($sql)->execute();
         if (!$ret) $this->error('insert video score error!' . $sql);
     }
     
     function insertVideoStat(&$video, &$info)
     {
-        $sql = sprintf("insert video_stat (id, clicks, clicker, comments, create_time) 
+        $sql = sprintf("insert video_stat (id, clicks, comments, create_time) 
                              values (%d, %d, '%s', %d, %d)",
             $id = (int) $video['Video_Id'],
             $clicks = (int) $video['Video_Click'],
-            $clicker = $video['Video_Click_IP'],
             $comments = 0,
             $create_time = $this->timestamp($video['Video_Time']) 
         );
-        $ret = mysql_query($sql);
+        $ret = Yii::app()->db->createCommand($sql)->execute();
         if (!$ret) $this->error('insert video stat error!' . $sql);
     }
     
     function insertUserSig(&$video, &$info) 
     {
         $sql = sprintf("select * from user_sig where signature='%s'", addslashes($info['player']));
-        $ret = mysql_query($sql);
-        $sig = mysql_fetch_array($ret);
+        $sig = Yii::app()->db->createCommand($sql)->queryRow();
         if ($sig != null) {
             if ($sig['user'] == (int) $video['Video_Player']) {
                 return true;
@@ -232,7 +222,7 @@ class ImportVideosCommand extends CConsoleCommand
                 $signature = addslashes($info['player']),
                 $create_time = $this->timestamp($video['Video_Time'])
             );
-            $ret = mysql_query($sql);
+            $ret = Yii::app()->db->createCommand($sql)->execute();
             if ($ret) {
                 return true;
             } else {
@@ -247,7 +237,7 @@ class ImportVideosCommand extends CConsoleCommand
     {
         $sql = sprintf("update user_stat set %s_videos=%s_videos+1 where id=%d",
                 $info['level'], $info['level'], $video['Video_Player']);
-        $ret = mysql_query($sql);
+        $ret = Yii::app()->db->createCommand($sql)->execute();
         if (!$ret) $this->error('increase use video stat error!' . $sql);
     }
     
@@ -255,18 +245,16 @@ class ImportVideosCommand extends CConsoleCommand
     {
         $sql = sprintf("select count(*) as count from video where id=%d",
                         intval($video['Video_Id']));
-        $ret = mysql_query($sql);
-        $ass = mysql_fetch_assoc($ret);
-        return $ass['count'] == '1';
+        $ret = Yii::app()->db->createCommand($sql)->queryRow();
+        return $ret['count'] == '1';
     }
     
     function videoDuplicated($info)
     {
         $sql = sprintf("select count(*) as count from video where hash='%s'",
                         $info['hash']);
-        $ret = mysql_query($sql);
-        $ass = mysql_fetch_assoc($ret);
-        return $ass['count'] == '1';
+        $ret = Yii::app()->db->createCommand($sql)->queryRow();
+        return $ret['count'] == '1';
     }
     
     function copyVideoFile($video, $info)
@@ -290,9 +278,8 @@ class ImportVideosCommand extends CConsoleCommand
     function checkUser($id)
     {
         $sql = sprintf("select count(*) as count from user where id=%d", $id);
-        $res = mysql_query($sql);
-        $ass = mysql_fetch_assoc($res);
-        return $ass['count'] == '1';
+        $ret = Yii::app()->db->createCommand($sql)->queryRow();
+        return $ret['count'] == '1';
     }
     
     function timestamp($string) 

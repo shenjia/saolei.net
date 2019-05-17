@@ -93,7 +93,7 @@ class AccountController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-
+		
 		if(isset($_POST['LoginForm']))
 		{
 			$model->attributes=$_POST['LoginForm'];
@@ -157,6 +157,7 @@ class AccountController extends Controller
 		$model = new PasswordForm;
 		
 		if (isset($_POST['ajax']) && $_POST['ajax']==='password-form') {
+
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}

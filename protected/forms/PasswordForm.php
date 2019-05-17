@@ -17,7 +17,8 @@ class PasswordForm extends CFormModel
 	
 	public function authenticate()
 	{
-		if (!UserAuth::checkPassword(Yii::app()->user->username, $this->password)) {
+					
+		if (!UserAuth::checkPassword(Yii::app()->user->name, $this->password)) {
 			$this->addError('password', Yii::t('form/password-form', 'wrong_password'));
 		}
 	}
@@ -30,7 +31,7 @@ class PasswordForm extends CFormModel
 	
 	public function saveToDb()
 	{
-		UserAuth::setPassword(Yii::app()->user->username, $this->new);
+		UserAuth::setPassword(Yii::app()->user->name, $this->new);
 	}
 	
 	public function attributeLabels()

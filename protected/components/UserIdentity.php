@@ -25,6 +25,7 @@ class UserIdentity extends CUserIdentity
 			if ( $auth['password'] !== md5( $this->password . $auth[ 'salt' ] ) ) {
 				$this->errorCode = self::ERROR_PASSWORD_INVALID;
 			} else {
+				var_dump($auth->user->chinese_name);
 				$this->setState('id', $auth->id); 
 				$this->setState('role', $auth->role);  
 				$this->setState('chinese_name', $auth->user->chinese_name); 

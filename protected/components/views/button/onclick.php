@@ -1,4 +1,4 @@
-<?
+<?php
 //确认开始
 if ( $this->confirm ) {
     echo 'if(confirm(\'' . ( strlen( $this->confirm ) > 1 ? $this->confirm : '您确定吗?' ) . '\')){';
@@ -14,17 +14,17 @@ else if ( $this->ajax ) {
 	?>$.ajax({
 type:'POST',
 url:'<?= $this->ajax ?>',
-<?if ( is_array( $this->data ) ):?>
+<?php if ( is_array( $this->data ) ):?>
 data:'<?= Request::mergeParams( $this->data ) ?>',
 <?elseif ( is_string( $this->data ) ):?>
 data:<?= $this->data ?>,
-<?endif;?>
-<?if ( $this->success ):?>
+<?php endif;?>
+<?php if ( $this->success ):?>
 success:function(data){<?= $this->success ?>;$('#<?= $this->id ?>').removeClass('ing');},
-<?endif;?>
+<?php endif;?>
 dataType:'<?= $this->dataType ?>',
 error:function(e){alert(e.responseText);$('#<?= $this->id ?>').removeClass('ing');}
-}).done(function(){$('#<?= $this->id ?>').removeClass('ing');})<?
+}).done(function(){$('#<?= $this->id ?>').removeClass('ing');})<?php
 }
 //url跳转
 else if ( $this->url ) {

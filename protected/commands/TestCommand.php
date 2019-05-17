@@ -3,8 +3,12 @@ class TestCommand extends CConsoleCommand
 {
     public function actionIndex($args) 
     {
-        var_dump(Ranking::getPage(5138, 'beg', 'time', 2));
-        var_dump(Ranking::getPage(6786, 'beg', 'time', 2));
-        echo 'test' . PHP_EOL;
+        $sql = sprintf("select count(*) as count from user where id=%d",39);
+        echo $sql . PHP_EOL;
+        
+        $ret = Yii::app()->db->createCommand($sql)->queryScalar();
+        var_dump($ret);
+
+        
     }
 }

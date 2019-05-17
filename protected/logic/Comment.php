@@ -21,6 +21,7 @@ class Comment
         }
         $comment->status = CommentConfig::STATUS_NORMAL;
         $comment->create_time = time();
+        $comment->update_time = time();
         if ($result = $comment->save()) {
             $data['id'] = $comment->id;
         }

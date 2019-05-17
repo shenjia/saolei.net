@@ -43,7 +43,9 @@
 		</div>
 	</div>
 </div>
+<!-- 正文开始 -->
 <?php echo $content;?>
+<!-- 正文结束 -->
 <div id="footer">
 	<div class="wrapper">
 	<p>

@@ -10,7 +10,7 @@ class InitCommand extends CConsoleCommand
     
     public function actionNews($args) 
     {
-        $this->truncateTable(array(
+        $this->truncateTables(array(
             'news', 'user_scores', 'user_scores_nf'
         ));
         $videos = VideoModel::model()->iterate(array(

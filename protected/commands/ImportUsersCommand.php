@@ -7,9 +7,6 @@ class ImportUsersCommand extends CConsoleCommand
             Yii::app()->db->createCommand()->truncateTable($table);
         }
         
-        $mysql = mysql_connect('127.0.0.1', Yii::app()->db->username, Yii::app()->db->password);
-        mysql_select_db('saolei');
-        
         $skip_ids = array(    
             '8160', '6542', '2164', '2198', '2199', '2494', '2495',
             '2498', '2499', '2500', '2501', '497', '10074', '10212', '10217', '10669',
@@ -72,7 +69,7 @@ class ImportUsersCommand extends CConsoleCommand
             $avatar = intval(trim($user['Player_Image'])=='True'),
             $create_time = $this->timestamp($user['Player_Register_Time']) 
         );
-        $ret = mysql_query($sql);
+        $ret = Yii::app()->db->createCommand($sql)->execute();
         if (!$ret) die('insert user error!' . $sql);
     }
     
@@ -95,7 +92,7 @@ class ImportUsersCommand extends CConsoleCommand
             $interest = addslashes($user['Player_Interest'] == '无' ? '' : $user['Player_Interest']),
             $create_time = $this->timestamp($user['Player_Register_Time']) 
         );
-        $ret = mysql_query($sql);
+        $ret = Yii::app()->db->createCommand($sql)->execute();
         if (!$ret) die('insert user info error!' . $sql);
     }
     
@@ -116,7 +113,7 @@ class ImportUsersCommand extends CConsoleCommand
             $role,
             $create_time = $this->timestamp($user['Player_Register_Time']) 
         );
-        $ret = mysql_query($sql);
+        $ret = Yii::app()->db->createCommand($sql)->execute();
         if (!$ret) die('insert user auth error!' . $sql);
     }
     
@@ -135,7 +132,7 @@ class ImportUsersCommand extends CConsoleCommand
             $exp_videos = 0,
             $create_time = $this->timestamp($user['Player_Register_Time'])
         );
-        $ret = mysql_query($sql);
+        $ret = Yii::app()->db->createCommand($sql)->execute();
         if (!$ret) die('insert user stat error!' . $sql);
     }
     
@@ -147,7 +144,7 @@ class ImportUsersCommand extends CConsoleCommand
             $signature = addslashes($user['Player_Text']),
             $create_time = $this->timestamp($user['Player_Register_Time'])
         );
-        $ret = mysql_query($sql);
+        $ret = Yii::app()->db->createCommand($sql)->execute();
         if (!$ret) echo $user['Player_Id'] . ' : ' . $user['Player_Text'] . PHP_EOL;
         //if (!$ret) die('insert user stat error!' . $sql);
     }
