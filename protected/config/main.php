@@ -54,6 +54,7 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
+		// DB Connection
 		'db'=>array(
 			'connectionString' => 'mysql:host=127.0.0.1;dbname=saolei',
 			'emulatePrepare' => true,
