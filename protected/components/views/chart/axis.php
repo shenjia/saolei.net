@@ -9,7 +9,7 @@
         <?php if ( isset( $axis[ 'step' ] ) ): ?>
         step : <?= $axis[ 'step' ] ?>,
         <?php endif;?>
-		<?
+		<?php
         $name = 'chart/formatter/' . $axis[ 'type' ];
         if ( file_exists($this->getViewPath() . '/' . $name . '.php' ) ) {
 		    echo 'formatter: function() {';

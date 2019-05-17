@@ -18,13 +18,13 @@ $(function () {
             title: {
                 text: '<?= $this->title ?>'
             },
-            xAxis: <? $this->render( 'chart/axis', array( 'axis' => $this->x ) ) ?>,
-            yAxis: <? $this->render( 'chart/axis', array( 'axis' => $this->y ) ) ?>,
+            xAxis: <?php $this->render( 'chart/axis', array( 'axis' => $this->x ) ) ?>,
+            yAxis: <?php $this->render( 'chart/axis', array( 'axis' => $this->y ) ) ?>,
             tooltip: {
-            	<? $this->render( 'chart/tooltip/' . $this->tooltip ) ?>
+            	<?php $this->render( 'chart/tooltip/' . $this->tooltip ) ?>
             },
             plotOptions: {
-                <?
+                <?php
                 $name = 'chart/plotOptions/' . $this->type;
                 if ( file_exists($this->getViewPath() . '/' . $name . '.php' ) ) {
                 	$this->render( $name );

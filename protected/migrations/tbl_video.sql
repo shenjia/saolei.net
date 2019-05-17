@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS `video_info` (
 CREATE TABLE IF NOT EXISTS `video_stat` (
   `id` bigint(20) NOT NULL auto_increment,
   `clicks` int(10) NOT NULL default 0,
+  `clicker` char(40) NULL,
   `downloads` int(10) NOT NULL default 0,
   `downloader` char(40) NULL,
   `comments` int(10) NOT NULL default 0,

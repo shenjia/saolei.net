@@ -118,6 +118,7 @@ CREATE TABLE IF NOT EXISTS `user_stat` (
   `login_ip` char(40) NULL,
   `points` int(10) NOT NULL default 0,
   `clicks` int(10) NOT NULL default 0,
+  `clicker` char(40) NULL,
   `beg_videos` int(10) NOT NULL default 0,
   `int_videos` int(10) NOT NULL default 0,
   `exp_videos` int(10) NOT NULL default 0,

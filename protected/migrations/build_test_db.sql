@@ -11,6 +11,7 @@ delete from user_stat      where id > 100;
 update user_auth set username = concat('user', id) 
 
 delete from video                where user > 100;
+delete from video_info           where id not in (select id from video);
 delete from video_scores_beg     where user > 100;
 delete from video_scores_beg_nf  where user > 100;
 delete from video_scores_exp     where user > 100;
